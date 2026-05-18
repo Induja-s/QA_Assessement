@@ -1,0 +1,26 @@
+1.AI Tools Used
+ChatGPT, 
+GitHub Copilot,
+Postman AI Assistant
+
+2.How AI is Used During Testing
+AI is used to generate test cases, improve bug reports, create API scripts,
+identify edge cases, and increase productivity during regression testing.
+
+3.Example of AI Productivity Improvement
+AI helped generate multiple edge-case scenarios for login API testing within minutes,
+ reducing manual effort and improving test coverage.
+
+4.Risks of AI in QA
+AI may generate incorrect test cases, miss business logic validations, or provide inaccurate outputs if prompts are unclear.
+
+5.Validation of AI Outputs
+All AI-generated outputs are manually reviewed and validated against application requirements before execution.
+
+6.AI for Automation Scripting
+Yes, AI has been used to generate Selenium and Postman automation scripts, 
+which are later customized and verified manually.
+
+7.AI Prompt Example
+Generate comprehensive login page test cases including positive, negative, 
+boundary, usability, security, and session management scenarios.
