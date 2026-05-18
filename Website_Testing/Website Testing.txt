@@ -1,0 +1,62 @@
+Task 2 – Website Testing
+Website Tested
+https://rewardz.sg/
+
+| Test Case ID | Scenario                | Expected Result           |
+| ------------ | ----------------------- | ------------------------- |
+| TC_WEB_001   | Open homepage           | Homepage loads properly   |
+| TC_WEB_002   | Verify navigation menu  | All menus clickable       |
+| TC_WEB_003   | Verify login page       | Login page opens          |
+| TC_WEB_004   | Verify contact form     | Form submits successfully |
+| TC_WEB_005   | Broken links validation | No broken links           |
+
+
+Usability Testing
+
+| Scenario              | Observation                    |
+| --------------------- | ------------------------------ |
+| Mobile responsiveness | Website should adjust properly |
+| Font readability      | Text should be readable        |
+| Button visibility     | CTA buttons clearly visible    |
+| Navigation flow       | User-friendly navigation       |
+
+
+Compatibility Testing
+
+| Browser        | Expected Result |
+| -------------- | --------------- |
+| Chrome         | Working         |
+| Firefox        | Working         |
+| Safari         | Working         |
+| Edge           | Working         |
+| Android/iPhone | Responsive UI   |
+
+
+Bug Reports
+Bug 1
+Title: Login button inactive after entering credentials
+Severity: High
+Priority: High
+Steps
+Open login page
+Enter valid credentials
+Click Login
+
+Expected
+User should login successfully.
+
+Actual
+Button remains inactive.
+
+Bug 2
+Title: Homepage alignment issue on iPhone
+Expected
+UI should be responsive.
+
+Actual
+Text overlaps banner image.
+
+Improvement Recommendations
+Add loading indicators
+Add better error validation messages
+Improve accessibility support
