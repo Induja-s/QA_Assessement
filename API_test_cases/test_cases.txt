@@ -1,0 +1,84 @@
+Task 1: API Testing (Postman)
+
+Assumptions
+Base URL: https://api.rewardz.com
+APIs use JSON format
+Authentication token required after login
+Cart operations require logged-in user
+
+1. Login API Testing
+Endpoint
+POST /login
+| Test Case ID | Scenario                          | Expected Result              |
+| ------------ | --------------------------------- | ---------------------------- |
+| TC_LOGIN_001 | Login with valid email & password | 200 OK, token generated      |
+| TC_LOGIN_002 | Login with active user            | User redirected successfully |
+| TC_LOGIN_003 | Check response time               | Response < 2 sec             |
+
+| Test Case ID | Scenario                 | Expected Result       |
+| ------------ | ------------------------ | --------------------- |
+| TC_LOGIN_004 | Invalid password         | 401 Unauthorized      |
+| TC_LOGIN_005 | Invalid email format     | Validation error      |
+| TC_LOGIN_006 | Empty email/password     | Mandatory field error |
+| TC_LOGIN_007 | SQL Injection input      | Request blocked       |
+| TC_LOGIN_008 | Login with inactive user | Access denied         |
+
+2. Product Listing API
+Endpoint
+GET /products
+| Test Case ID | Scenario               | Expected Result              |
+| ------------ | ---------------------- | ---------------------------- |
+| TC_PROD_001  | Fetch product list     | 200 OK                       |
+| TC_PROD_002  | Verify product fields  | Name, price, image displayed |
+| TC_PROD_003  | Invalid token          | 401 Unauthorized             |
+| TC_PROD_004  | Empty product database | Empty array returned         |
+| TC_PROD_005  | Large product count    | API handles pagination       |
+
+3. Add to Cart API
+Endpoint 
+POST /cart/add
+| Test Case ID | Scenario                     | Expected Result            |
+| ------------ | ---------------------------- | -------------------------- |
+| TC_CART_001  | Add valid product            | Product added successfully |
+| TC_CART_002  | Add out-of-stock product     | Error message              |
+| TC_CART_003  | Add negative quantity        | Validation error           |
+| TC_CART_004  | Add without login            | 401 Unauthorized           |
+| TC_CART_005  | Add same item multiple times | Quantity updated           |
+
+4. Remove from Cart API
+Endpoint
+DELETE /cart/remove
+| Test Case ID  | Scenario               | Expected Result   |
+| ------------- | ---------------------- | ----------------- |
+| TC_REMOVE_001 | Remove existing item   | Item removed      |
+| TC_REMOVE_002 | Remove invalid item ID | Error message     |
+| TC_REMOVE_003 | Remove from empty cart | Proper validation |
+
+
+5. Checkout API
+Endpoint
+POST /checkout
+| Test Case ID | Scenario               | Expected Result     |
+| ------------ | ---------------------- | ------------------- |
+| TC_CHECK_001 | Successful checkout    | Order created       |
+| TC_CHECK_002 | Checkout empty cart    | Validation error    |
+| TC_CHECK_003 | Invalid payment method | Payment failed      |
+| TC_CHECK_004 | Expired token          | Session expired     |
+| TC_CHECK_005 | Network interruption   | Retry/error handled |
+
+
+Postman Test Script
+
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+
+pm.test("Response contains token", function () {
+    var jsonData = pm.response.json();
+    pm.expect(jsonData.token).to.exist;
+});
+
+pm.test("Response time is less than 2s", function () {
+    pm.expect(pm.response.responseTime).to.be.below(2000);
+});
+
