@@ -1,0 +1,30 @@
+Mobile Application Testing
+
+Registration Test Cases
+
+| Test Case ID | Scenario                            | Expected Result          |
+| ------------ | ----------------------------------- | ------------------------ |
+| TC_REG_001   | Register valid new user             | Status becomes Active    |
+| TC_REG_002   | Verify is_active field              | Updated to True          |
+| TC_REG_003   | Login after activation              | Login successful         |
+| TC_REG_004   | Duplicate registration              | Error shown              |
+| TC_REG_005   | Invalid email format                | Validation message       |
+| TC_REG_006   | Weak password                       | Password policy error    |
+| TC_REG_007   | Empty mandatory fields              | Validation error         |
+| TC_REG_008   | Existing inactive user registration | Status updated correctly |
+| TC_REG_009   | Session timeout during registration | Session handled properly |
+
+Login Validation Cases
+| Test Case ID | Scenario                 | Expected Result      |
+| ------------ | ------------------------ | -------------------- |
+| TC_LOG_001   | Active user login        | Success              |
+| TC_LOG_002   | Inactive user login      | Access denied        |
+| TC_LOG_003   | Invalid password         | Error message        |
+| TC_LOG_004   | Multiple failed attempts | Account lock warning |
+
+
+Edge Cases
+Very long username input
+Internet interruption during registration
+Concurrent login from multiple devices
+App minimization during process
