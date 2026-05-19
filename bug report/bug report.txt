@@ -1,0 +1,7 @@
+
+bug report:
+
+Broken UI alignment
+Invalid error message
+API status code mismatch
+Duplicate registration issue
