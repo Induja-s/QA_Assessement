@@ -1,0 +1,25 @@
+Testing Types Performed
+
+Functional Testing
+API Testing
+UI Testing
+Mobile Testing
+Validation Testing
+
+Total Test Cases 
+Total: 25
+Passed: 20
+Failed: 5
+
+Major Bugs Found
+Broken UI on mobile screen
+Invalid error handling
+API failure response mismatch
+
+Tools Used
+Postman
+Chrome DevTools
+GitHub
+
+
+Application works properly for basic flows but some UI and validation issues need improvement.
